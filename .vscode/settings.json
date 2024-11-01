@@ -4,13 +4,10 @@
         "cprg",
         "Custompropex",
         "Ionicons",
-        "ispresented",
         "Multipleprops",
-        "mycomponent",
         "Pressable",
         "Statecustom",
         "Todoform",
-        "Todolist",
-        "Userdetails"
+        "Todolist"
     ]
 }
