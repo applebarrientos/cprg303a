@@ -1,148 +1,120 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
-import React from "react";
-import { Link, useNavigation } from "expo-router";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { Link } from "expo-router";
 
 const Index = () => {
-  const navigation = useNavigation();
+  const [pressedButton, setPressedButton] = useState(null);
 
   return (
-    <ImageBackground
-      style={styles.background}
-      source={{
-        uri: "https://images.unsplash.com/photo-1612800694220-35a0a24e7f98",
-      }} // Soft, professional background
-    >
-      <View style={styles.container}>
-        <View style={styles.card}>
-          <Text style={styles.heading}>Welcome Back!</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>CPRG 303 A</Text>
 
-          {/* Username Input */}
-          <View style={styles.inputGroup}>
-            <Ionicons
-              style={styles.icon}
-              name="person-outline"
-              size={24}
-              color="#555"
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Username"
-              placeholderTextColor="#aaa"
-            />
-          </View>
+      {/* Button to Lab 1 */}
+      <TouchableOpacity
+        onPressIn={() => setPressedButton("lab1")}
+        onPressOut={() => setPressedButton(null)}
+      >
+        <Link
+          href="/lab1"
+          style={[styles.link, pressedButton === "lab1" && styles.linkPressed]}
+        >
+          <Text style={styles.buttonText}>Lab 1</Text>
+        </Link>
+      </TouchableOpacity>
 
-          {/* Password Input */}
-          <View style={styles.inputGroup}>
-            <MaterialCommunityIcons
-              style={styles.icon}
-              name="lock-outline"
-              size={24}
-              color="#555"
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Password"
-              placeholderTextColor="#aaa"
-              secureTextEntry
-            />
-          </View>
+      {/* Button to Lab 2 */}
+      <TouchableOpacity
+        onPressIn={() => setPressedButton("lab2")}
+        onPressOut={() => setPressedButton(null)}
+      >
+        <Link
+          href="/lab2"
+          style={[styles.link, pressedButton === "lab2" && styles.linkPressed]}
+        >
+          <Text style={styles.buttonText}>Lab 2</Text>
+        </Link>
+      </TouchableOpacity>
 
-          {/* Login Button */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("(drawer)")}
-          >
-            <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
+      {/* Button to Lab 3 */}
+      <TouchableOpacity
+        onPressIn={() => setPressedButton("lab3")}
+        onPressOut={() => setPressedButton(null)}
+      >
+        <Link
+          href="/lab3"
+          style={[styles.link, pressedButton === "lab3" && styles.linkPressed]}
+        >
+          <Text style={styles.buttonText}>Lab 3</Text>
+        </Link>
+      </TouchableOpacity>
 
-          {/* Link to Register */}
-          <Link href="/modal" style={styles.link}>
-            Open Modal
-          </Link>
-        </View>
-      </View>
-    </ImageBackground>
+      {/* Button to Lecture 2 */}
+      <TouchableOpacity
+        onPressIn={() => setPressedButton("lecture2")}
+        onPressOut={() => setPressedButton(null)}
+      >
+        <Link
+          href="/lecture2"
+          style={[
+            styles.link,
+            pressedButton === "lecture2" && styles.linkPressed,
+          ]}
+        >
+          <Text style={styles.buttonText}>Lecture 20241017</Text>
+        </Link>
+      </TouchableOpacity>
+
+      {/* Button to Lecture 3 */}
+      <TouchableOpacity
+        onPressIn={() => setPressedButton("lecture3")}
+        onPressOut={() => setPressedButton(null)}
+      >
+        <Link
+          href="/lecture3"
+          style={[
+            styles.link,
+            pressedButton === "lecture3" && styles.linkPressed,
+          ]}
+        >
+          <Text style={styles.buttonText}>Lecture 20241031</Text>
+        </Link>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 export default Index;
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 20,
+    paddingTop: 100,
+    backgroundColor: "gray",
   },
-  card: {
-    width: "100%",
-    backgroundColor: "rgba(255, 255, 255, 0.9)", // Slightly transparent for modern effect
-    borderRadius: 15,
-    padding: 20,
-    shadowColor: "#000",
-    shadowOpacity: 0.15,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 10,
-    elevation: 5,
-  },
-  heading: {
-    color: "#333",
-    fontSize: 28,
+  text: {
+    fontSize: 40,
+    fontFamily: "Courier",
     fontWeight: "bold",
+    color: "#fff",
     marginBottom: 40,
-    textAlign: "center",
   },
-  inputGroup: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 20,
-    borderBottomWidth: 1,
-    borderColor: "#ddd",
-    paddingBottom: 10,
-    backgroundColor: "white",
+  link: {
+    width: 200, // Fixed width for all buttons
+    backgroundColor: "#1e90ff",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
     borderRadius: 8,
-    paddingHorizontal: 10,
-    height: 50,
+    marginBottom: 15,
+    alignItems: "center", // Center text within the button
   },
-  input: {
-    flex: 1,
-    fontSize: 16,
-    paddingHorizontal: 10,
-    color: "#333",
-  },
-  icon: {
-    marginRight: 10,
-  },
-  button: {
-    backgroundColor: "#007BFF",
-    borderRadius: 8,
-    paddingVertical: 14,
-    alignItems: "center",
-    marginVertical: 20,
+  linkPressed: {
+    backgroundColor: "#104e8b", // Darker shade for pressed state
   },
   buttonText: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
-  },
-  link: {
-    fontSize: 16,
-    color: "#007BFF",
     textAlign: "center",
-    marginTop: 10,
   },
 });
