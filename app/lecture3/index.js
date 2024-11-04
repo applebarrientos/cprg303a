@@ -66,7 +66,7 @@ const Index = () => {
 
           {/* Link to Register */}
           <Link href="/lecture3/modal" style={styles.link}>
-            Open Modal
+            Create account
           </Link>
         </View>
       </View>
