@@ -10,7 +10,6 @@ const Index = () => {
     { href: "/lab3", label: "Lab 3" },
     { href: "/lab4", label: "Lab 4" },
     { href: "/lab5", label: "Lab 5" },
-    { href: "/lab6", label: "Lab 6" },
     { href: "/lecture1", label: "Lecture 20241003" },
     { href: "/lecture2", label: "Lecture 20241017" },
     { href: "/lecture3", label: "Lecture 20241031" },

@@ -5,17 +5,17 @@ import TodoformLab4 from "./Todoform_Lab4";
 import TodoListLab4 from "./Todolist_Lab4";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
   const addTask = (taskText) => {
     if (taskText.trim()) {
-      setTasks([...tasks, taskText]);
+      setTasks([taskText, ...tasks]);
     }
   };
 
   return (
     <View>
-      <TodoListLab4 tasks={tasks} />
       <TodoformLab4 addTask={addTask} />
+      <TodoListLab4 tasks={tasks} />
     </View>
   );
 };
