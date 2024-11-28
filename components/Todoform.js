@@ -13,7 +13,11 @@ import {
 function Todoform() {
   return (
     <View style={styles.form}>
-      <TextInput style={styles.input} placeholder="Add a new task..." />
+      <TextInput
+        style={styles.input}
+        placeholder="Add a new task..."
+        placeholderTextColor="#808080"
+      />
       <Button title="Add" />
     </View>
   );

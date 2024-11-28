@@ -14,6 +14,7 @@ function TodoformLab4({ addTask }) {
       <TextInput
         style={styles.input}
         placeholder="Add a new task..."
+        placeholderTextColor="#808080"
         onChangeText={(text) => setTaskText(text)}
         value={taskText}
       />

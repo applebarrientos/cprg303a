@@ -5,12 +5,10 @@ import Todoform from "./Todoform";
 import TodoListLab3 from "./TodolistLab3";
 
 const App = () => {
-  // Part A: State Management
   const [tasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
 
   return (
     <View>
-      {/* Part B: Passing Props */}
       <TodoListLab3 tasks={tasks} />
       <Todoform />
     </View>
