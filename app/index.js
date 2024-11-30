@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Link } from "expo-router";
+// import Index from "../lab5/index";
 
 const Index = () => {
   // Array of links and their corresponding labels
@@ -9,7 +10,7 @@ const Index = () => {
     { href: "/lab2", label: "Lab 2" },
     { href: "/lab3", label: "Lab 3" },
     { href: "/lab4", label: "Lab 4" },
-    { href: "/lab5", label: "Lab 5" },
+    { href: "../lab5", label: "Lab 5" },
     { href: "/lecture1", label: "Lecture 20241003" },
     { href: "/lecture2", label: "Lecture 20241017" },
     { href: "/lecture3", label: "Lecture 20241031" },
